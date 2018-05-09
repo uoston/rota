@@ -1,0 +1,54 @@
+<list>
+  <TreeNode>
+    <number>0</number>
+    <parent>-1</parent>
+    <label>Init State
+0.0
+0
+0000
+0000
+0000
+0000
+</label>
+    <solution>false</solution>
+  </TreeNode>
+  <TreeNode>
+    <number>1</number>
+    <parent>0</parent>
+    <label>Colocar
+1.0
+1
+1000
+0010
+0000
+0100
+</label>
+    <solution>false</solution>
+  </TreeNode>
+  <TreeNode>
+    <number>2</number>
+    <parent>0</parent>
+    <label>Colocar
+1.0
+1
+1000
+0010
+0000
+0100
+</label>
+    <solution>false</solution>
+  </TreeNode>
+  <TreeNode>
+    <number>3</number>
+    <parent>0</parent>
+    <label>Colocar
+1.0
+1
+1000
+0010
+0000
+0100
+</label>
+    <solution>false</solution>
+  </TreeNode>
+</list>
