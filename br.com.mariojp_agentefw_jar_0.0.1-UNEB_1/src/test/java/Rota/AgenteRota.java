@@ -2,6 +2,7 @@ package Rota;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,54 +31,29 @@ class AgenteRota {
     	Mapa.gerarMapaReal();
     	Mapa.gerarLinhas();
     	
-    //	ArrayList<String> estacoes = new ArrayList();
-    /*	
-    	Map<String, Integer> estacoes = new HashMap<String,Integer>();
-    	Map<String, Integer> estacoes1 = new HashMap<String,Integer>();
-    	estacoes.put("E1",10);
-    	estacoes.put("E2",6);
-    	estacoes.put("E3",10);
-    	
-    	estacoes1.put("E4",20);
-    	estacoes1.put("E5",26);
-    	estacoes1.put("E6",20);
-    		
-    	ArrayList<Map> estacaoPai = new ArrayList();
-    	
-    	estacaoPai.add(estacoes);
-    	estacaoPai.add(estacoes1);
-    	Iterator<Map> est = estacaoPai.iterator();
-    	Map<String, Integer> estacao = new HashMap<String,Integer>();
-    	
-    	while(est.hasNext()){
-    		estacao = est.next();
-	        for (String key : estacao.keySet()) {
-	        	 Integer i =  estacao.get(key);
-	        	 String value = i.toString();
-	             System.out.println(key + " = " + value);
-	        }
-    	}
-    	*/
-    /*	
-     	Iterator<String> est = estacaoPai.iterator();
-    
-    	
-    	while(est.hasNext()){
-    		String estacao = est.next();
-    		System.out.println(estacao);
-    	}
-      */  
+    	executaArquivos();
 	
     }     
-    public void executaArquivos() throws IOException{
-		BufferedWriter m = new BufferedWriter(new FileWriter("E:/uneb/14/IA/trabalho/Mapa2.txt"));
+    public static void executaArquivos() throws IOException{
+    	BufferedReader arquivoFonte = new BufferedReader(new FileReader("E:/uneb/14/IA/trabalho/fonte.txt"));
+		BufferedWriter Resultado = new BufferedWriter(new FileWriter("E:/uneb/14/IA/trabalho/resultado.txt"));
+		//array com a quantidade de linhas no arquivo de inicialização
+		Integer[] linhas = new Integer[6];
 		
+		for(int valorLinha = 0; valorLinha < linhas.length; valorLinha++ ){		
+		String percurso = arquivoFonte.readLine(); 
+		String[] est = percurso.split(";");
+
+		Integer estacaoOrigem = Integer.parseInt(est[0]);
+		Integer estacaodestino = Integer.parseInt(est[1]);
+
     	AgentModel ab = new AgentModel();
 		
-		Estacao inicial = new Estacao(1);
+		Estacao inicial = new Estacao(estacaoOrigem);
+		
 		ab.setInitState(inicial);
 	
-		Estacao objetivo = new Estacao(5);
+		Estacao objetivo = new Estacao(estacaodestino);
 		ab.setInitState(objetivo); 
 	
 		ab.setType(IAgent.BREADTH_FIRST_SEARCH);
@@ -95,7 +71,7 @@ class AgenteRota {
 		//agente.exibirGrafico(null);
 		System.out.println(agente);
 		//System.out.println(nofinal);
-	
+		}
     	
     }
 }

@@ -5,6 +5,7 @@
  */
 package Rota;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -17,9 +18,8 @@ import br.com.mariojp.ai.agent.AbstractState;
 
 public class Estacao extends AbstractState {
 	public static int estacaoAnterior;
-	private int Estacao;
-	private int hora;
-	private int minuto;
+	private int Estacao;		
+	SimpleDateFormat sdf = null;
 	Integer[] Linhas = new Integer[4];
 	double[] EstacoesFilhas;
 
