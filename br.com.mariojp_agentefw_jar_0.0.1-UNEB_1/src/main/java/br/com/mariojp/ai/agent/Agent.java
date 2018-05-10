@@ -125,9 +125,9 @@ public abstract class Agent implements IAgent {
 		StringBuffer sb = new StringBuffer();
 		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
 		sb.append("Begin       : " + sdf.format(this.start) + "\n");
-		sb.append("End         : " + sdf.format(this.end) + "\n");
-		sb.append("Time elapsed: " + (this.end.getTime() - this.start.getTime())
-				+ "milisecs \n");
+	//	sb.append("End         : " + sdf.format(this.end) + "\n");
+	//	sb.append("Time elapsed: " + (this.end.getTime() - this.start.getTime())
+	//			+ "milisecs \n");
 		sb.append("Total Nodes Expanded : "+ this.border.getNodes() +"\n");
 		sb.append("Total Nodes Visited : "+ this.border.getVisits() +"\n");
 		return sb.toString();

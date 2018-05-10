@@ -1,6 +1,8 @@
 package Rota;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -14,7 +16,10 @@ import br.com.mariojp.ai.agent.IAgent;
 import br.com.mariojp.ai.agent.INode;
 import br.com.mariojp.ai.agent.exception.EmptyBorderException;
 import br.com.mariojp.exemplos.metroSsa.Estacao;
-
+/**
+*
+* @author uoston
+*/
 
 
 class AgenteRota {
@@ -23,6 +28,7 @@ class AgenteRota {
     	Mapa mapa = new Mapa();
     	Mapa.gerarMapaDireto();
     	Mapa.gerarMapaReal();
+    	Mapa.gerarLinhas();
     	
     //	ArrayList<String> estacoes = new ArrayList();
     /*	
@@ -61,8 +67,13 @@ class AgenteRota {
     		System.out.println(estacao);
     	}
       */  
-		AgentModel ab = new AgentModel();
-			
+	
+    }     
+    public void executaArquivos() throws IOException{
+		BufferedWriter m = new BufferedWriter(new FileWriter("E:/uneb/14/IA/trabalho/Mapa2.txt"));
+		
+    	AgentModel ab = new AgentModel();
+		
 		Estacao inicial = new Estacao(1);
 		ab.setInitState(inicial);
 	
@@ -74,17 +85,18 @@ class AgenteRota {
 		IAgent agente = AgentFactory.createAgent(ab);
 			
 		INode nofinal = null;
-		try {
+	/*	try {
 			nofinal = agente.function();
 		} catch (EmptyBorderException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//List cam = agente.obterCaminho(nofinal);
+		*///List cam = agente.obterCaminho(nofinal);
 		//agente.exibirGrafico(null);
 		System.out.println(agente);
-		System.out.println(nofinal);
+		//System.out.println(nofinal);
 	
-    }     
+    	
+    }
 }
 

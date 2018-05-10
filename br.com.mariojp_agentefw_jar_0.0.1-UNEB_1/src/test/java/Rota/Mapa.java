@@ -3,9 +3,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 public class Mapa {
-
+	//matriz com o dado da distancia direta entre estacoes[linha][coluna] ou  int distancia = estacoes[linha][coluna] 
 	public static Integer[][] mapaDireto = new Integer[42][42];
+	// array de estações [[estacao,distancia],....]
     public static List<double[]> distanciaReal = new ArrayList();
+    //array que contem um array com as linhas de cada estação
     public static List<Integer[]> Linhas = new ArrayList();
 	/**
 	 * @param args
@@ -58,7 +60,7 @@ public class Mapa {
 				for(int z = 0; z < stringEstacao.length; z++ ){
 					stringEstacao[z] = stringEstacao[z].trim();
 					estacoes[z]  = Double.parseDouble(stringEstacao[z]);
-					System.out.println(stringEstacao[z]);
+			//		System.out.println(stringEstacao[z]);
 				}
 				distanciaReal.add(estacoes);
 			}

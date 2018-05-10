@@ -43,7 +43,7 @@ public class Funcoes extends Functions{
         	estacao = (Estacao) no.getState();
             if(custo[i] == estacao.getEstacao()){
                 c = custo[i+1];
-                int linha = checarLinhaCusto(Estacao.estacaoAnterior, (int) custo[i]);
+     /*           int linha = checarLinhaCusto(Estacao.estacaoAnterior, (int) custo[i]);
                 int linhaAvo = linhaAvo(no.getParent());
                 int vel = checarVelLinha(linha);
                 c = c/vel;
@@ -55,7 +55,7 @@ public class Funcoes extends Functions{
                       c = c + 0.13;  
                     } 
                 }
-            }
+          */  }
             i++;
         }
         return c;
@@ -67,7 +67,7 @@ public class Funcoes extends Functions{
  * @param o
  * @return
  */
-    @Override
+    /*   @Override
 public double h(INode node){
         Estado est = (Estado) node.getState();
         double h = 0;
@@ -197,5 +197,5 @@ public double h(INode node){
     public double custoPai(INode pai){
         double custoPai = pai.getCost();
         return custoPai;
-    }
+    }*/
 }

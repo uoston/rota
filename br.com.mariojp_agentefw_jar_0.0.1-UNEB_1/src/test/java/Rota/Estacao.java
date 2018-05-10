@@ -27,7 +27,6 @@ public class Estacao extends AbstractState {
 		Linhas = Mapa.Linhas.get(idEstacao);
 		EstacoesFilhas = Mapa.distanciaReal.get(idEstacao);
 	}
-	
 	public int getEstacao() {
 		return Estacao;
 	}
