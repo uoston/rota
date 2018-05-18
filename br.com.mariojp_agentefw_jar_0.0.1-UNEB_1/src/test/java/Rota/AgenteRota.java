@@ -35,8 +35,8 @@ class AgenteRota {
 	
     }     
     public static void executaArquivos() throws IOException{
-    	BufferedReader arquivoFonte = new BufferedReader(new FileReader("E:/uneb/14/IA/trabalho/fonte.txt"));
-		BufferedWriter Resultado = new BufferedWriter(new FileWriter("E:/uneb/14/IA/trabalho/resultado.txt"));
+    	BufferedReader arquivoFonte = new BufferedReader(new FileReader("src\\test\\java\\Rota\\fonte.txt"));
+		BufferedWriter Resultado = new BufferedWriter(new FileWriter("src\\test\\java\\Rota\\resultado.txt"));
 		//array com a quantidade de linhas no arquivo de inicialização
 		Integer[] linhas = new Integer[6];
 		

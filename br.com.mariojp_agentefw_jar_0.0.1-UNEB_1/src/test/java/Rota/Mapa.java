@@ -30,7 +30,7 @@ public class Mapa {
 	}
 	public static void gerarLinhas() throws IOException{
 
-		BufferedReader arquivoMapaLinha = new BufferedReader(new FileReader("E:/uneb/14/IA/trabalho/Linhas.txt"));
+		BufferedReader arquivoMapaLinha = new BufferedReader(new FileReader("src\\test\\java\\Rota\\Linhas.txt"));
 		Integer[] linhas = new Integer[42];
 		//Integer[] l = new Integer[4];
 		Integer[] l = new Integer[4];
@@ -47,7 +47,7 @@ public class Mapa {
 		arquivoMapaLinha.close();	
 	}
 	public static void gerarMapaReal() throws IOException{
-		BufferedReader arquivoMapa = new BufferedReader(new FileReader("E:/uneb/14/IA/trabalho/DistanciaReal.txt"));
+		BufferedReader arquivoMapa = new BufferedReader(new FileReader("src\\test\\java\\Rota\\DistanciaReal.txt"));
 		double [] estacoes = new double[2];
 		Integer[] arrayMapa = new Integer[42];
 		for(int valorLinha = 0; valorLinha < arrayMapa.length; valorLinha++ ){
@@ -69,7 +69,7 @@ public class Mapa {
 		arquivoMapa.close();		
 	}
 	public static void gerarMapaDireto() throws IOException{
-		BufferedReader arquivoMapa = new BufferedReader(new FileReader("E:/uneb/14/IA/trabalho/Mapa.txt"));
+		BufferedReader arquivoMapa = new BufferedReader(new FileReader("src\\test\\java\\Rota\\Mapa.txt"));
 		
 		Integer[] arrayMapa = new Integer[42];
 		for(int valorLinha = 0; valorLinha < arrayMapa.length; valorLinha++ ){
@@ -86,11 +86,11 @@ public class Mapa {
 		arquivoMapa.close();
 	}
 	public void escrever() throws IOException{
-		BufferedWriter m = new BufferedWriter(new FileWriter("E:/uneb/14/IA/trabalho/Mapa2.txt"));		
+		BufferedWriter m = new BufferedWriter(new FileWriter("src\\test\\java\\Rota\\Mapa2.txt"));		
 	};
 	public static void main(String[] args) throws IOException{
-		//gerarMapaDireto();
-		//gerarMapaReal();
+		gerarMapaDireto();
+		gerarMapaReal();
 		gerarLinhas();
 	}
 }

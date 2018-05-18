@@ -14,13 +14,13 @@ import br.com.mariojp.ai.agent.INode;
  */
 public class Funcoes extends Functions{
 	
-	   /*    double tempo_medio(float distancia,float velocidade){
+	    double tempo_medio(float distancia,float velocidade){
         float tempoMedio = velocidade / distancia;
         return tempoMedio;
     }
 
     double g (Estacao estAtual, Estacao estFinal){
-    	//Fun��o de custo real
+    	//Funcao de custo real
     	int tAtual = tempo_medio(estAtual.getDis)
     	Estado eIni = (Estado)estAtual.getState();
     	Estado eFin = (Estado)estFinal.getState();
@@ -33,7 +33,7 @@ public class Funcoes extends Functions{
     double h (Inode No){
     	//Fun��o heur�stica
     	
-    }*/
+    }
     public double g(INode no){
         double c = 0;
         double[] custo = Mapa.distanciaReal.get(Estacao.estacaoAnterior-1);
@@ -43,7 +43,7 @@ public class Funcoes extends Functions{
         	estacao = (Estacao) no.getState();
             if(custo[i] == estacao.getEstacao()){
                 c = custo[i+1];
-     /*           int linha = checarLinhaCusto(Estacao.estacaoAnterior, (int) custo[i]);
+                int linha = checarLinhaCusto(Estacao.estacaoAnterior, (int) custo[i]);
                 int linhaAvo = linhaAvo(no.getParent());
                 int vel = checarVelLinha(linha);
                 c = c/vel;
@@ -55,7 +55,7 @@ public class Funcoes extends Functions{
                       c = c + 0.13;  
                     } 
                 }
-          */  }
+           }
             i++;
         }
         return c;
@@ -67,8 +67,8 @@ public class Funcoes extends Functions{
  * @param o
  * @return
  */
-    /*   @Override
-public double h(INode node){
+       @Override
+       public double h(INode node){
         Estado est = (Estado) node.getState();
         double h = 0;
         int l = est.getEstacaoAtual();
@@ -197,5 +197,5 @@ public double h(INode node){
     public double custoPai(INode pai){
         double custoPai = pai.getCost();
         return custoPai;
-    }*/
+    }
 }
